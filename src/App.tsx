@@ -5,6 +5,10 @@ import Sidebar from './components/Layout/Sidebar';
 import DashboardView from './components/Dashboard/DashboardView';
 import LiveMonitoringView from './components/LiveMonitoring/LiveMonitoringView';
 import TouristAppView from './components/TouristApp/TouristAppView';
+import IncidentManagementView from './components/IncidentManagement/IncidentManagementView';
+import TouristManagementView from './components/TouristManagement/TouristManagementView';
+import GeofenceManagementView from './components/GeofenceManagement/GeofenceManagementView';
+import AnalyticsView from './components/Analytics/AnalyticsView';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -19,35 +23,13 @@ function App() {
       case 'tourist-app':
         return <TouristAppView />;
       case 'incidents':
-        return (
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-900">Incident Management</h2>
-            <p className="text-gray-600 mt-1">Manage and respond to tourist safety incidents</p>
-            <div className="mt-8 text-center text-gray-500">
-              Incident management interface coming soon...
-            </div>
-          </div>
-        );
+        return <IncidentManagementView />;
       case 'tourists':
-        return (
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-900">Tourist Management</h2>
-            <p className="text-gray-600 mt-1">Manage tourist profiles and digital identities</p>
-            <div className="mt-8 text-center text-gray-500">
-              Tourist management interface coming soon...
-            </div>
-          </div>
-        );
+        return <TouristManagementView />;
       case 'geofences':
-        return (
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-900">Geofence Management</h2>
-            <p className="text-gray-600 mt-1">Configure and monitor geo-fenced safety zones</p>
-            <div className="mt-8 text-center text-gray-500">
-              Geofence management interface coming soon...
-            </div>
-          </div>
-        );
+        return <GeofenceManagementView />;
+      case 'analytics':
+        return <AnalyticsView />;
       case 'responders':
         return (
           <div className="p-6">
@@ -65,16 +47,6 @@ function App() {
             <p className="text-gray-600 mt-1">Blockchain-based digital ID verification and management</p>
             <div className="mt-8 text-center text-gray-500">
               Digital identity interface coming soon...
-            </div>
-          </div>
-        );
-      case 'analytics':
-        return (
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-900">Analytics & Reports</h2>
-            <p className="text-gray-600 mt-1">Safety trends, incident analysis, and performance metrics</p>
-            <div className="mt-8 text-center text-gray-500">
-              Analytics dashboard coming soon...
             </div>
           </div>
         );
